@@ -72,7 +72,7 @@ function:
 void DEV_Set_Baudrate(UDOUBLE Baudrate)
 {
     serialClose(fd);
-    if((fd = serialOpen("/dev/ttyS0",Baudrate)) < 0){
+    if((fd = serialOpen("/dev/ttyUSB0",Baudrate)) < 0){
         printf("set uart successfailed	!!! \r\n");
     }else{
         printf("set uart success  !!! \r\n");
@@ -102,7 +102,7 @@ UBYTE DEV_ModuleInit(void)
         printf("set wiringPi lib success  !!! \r\n");
     }
 	
-    if((fd = serialOpen("/dev/ttyS0",115200)) < 0){
+    if((fd = serialOpen("/dev/ttyUSB0",115200)) < 0){
         return 1;
     }else {
         printf("set uart success  !!! \r\n");
